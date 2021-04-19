@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГАЛЕРИЈА</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        h1 {
+            color: honeydew;
+            padding-top: 20px;
+            padding-right: 50px;
+            padding-bottom: 20px;
+            padding-left: 50px;
+            }
+        h2 {text-align: justify;}
+        div img{
+            margin: 0px;
+            width: 200px;
+            height: 100px;
+        }
+        #master{
+            width: 400px;
+        }
+    </style>
+    <script>
+        function promeni(objekat){
+            document.getElementById("master").src=objekat.src
+        }
+    </script>
+</head>
+<body>
+    <a href="index.html">
+        <img src="home.png"
+        alt="Pocetna stranica"
+        style="width:42px;height:42px;">
+    </a>
+    <h1>Галерија аутомобила</h1>
+    <h2>Пређи мишем преко готографије да би се приказала у већем формату.</h2>
+    <div>
+        <img src="auto1.jpg" alt="auto" onmousemove="promeni(this)"> 
+        <img src="auto2.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto3.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto4.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto5.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto6.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto7.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto8.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto9.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto10.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto11.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto12.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto13.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto14.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto15.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto16.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto17.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto18.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto19.jpg" alt="auto" onmousemove="promeni(this)">
+        <img src="auto20.jpg" alt="auto" onmousemove="promeni(this)">
+    </div>
+    <img src="auto12.jpg" alt="auto" id="master">
+    <br>
+    <br>
+    <a href="index.html">
+        <img src="home.png"
+        alt="Pocetna stranica"
+        style="width:42px;height:42px;">
+    </a>
+</body>
+</html>

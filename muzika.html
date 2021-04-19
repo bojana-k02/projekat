@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музика</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        h1 {
+            color: honeydew;
+            padding-top: 20px;
+            padding-right: 50px;
+            padding-bottom: 20px;
+            padding-left: 50px;
+            }
+        h2 {text-align: justify;}
+        /*Podesavanje video snimka*/
+        #player:-moz-full-screen,
+        #player:-moz-full-screen #media{
+            width: 50%;
+            height: 50%;
+        }
+        /*Podesavanje tacnog vremena*/
+        #vreme{
+            width: 300px;
+            height: 200px;
+            color: skyblue;
+            background-color: slategray;
+            font-size: 50px;
+        }
+        button{
+            background-color: black;
+            color: aquamarine;
+            border: 2px solid white;
+            height: 20px;
+            width: 65px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">
+        <img src="home.png"
+        alt="Pocetna stranica"
+        style="width:42px;height:42px;">
+    </a>
+    <!--Tacno vreme-->
+    <div id="vreme">
+        <p>Тачно време</p>
+        <p id="tacnoVreme"></p>
+    </div>
+    <h1>Музика</h1>
+    <ol>
+        <li>
+            <iframe width="420px" height="315px" src="https://www.youtube.com/embed/mK13sCJ6X5I"></iframe>
+        </li>
+        <li>
+            <iframe width="420px" height="315px" src="https://www.youtube.com/embed/tOtN-rLP7H0"></iframe>
+        </li>
+        <li>
+            <iframe width="420px" height="315px" src="https://www.youtube.com/embed/3p20mJi1myw"></iframe>
+        </li>
+        <li>
+            <iframe width="420px" height="315px" src="https://www.youtube.com/embed/_qSdNFe9JSA"></iframe>
+        </li>
+        <li>
+            <iframe width="420px" height="315px" src="https://www.youtube.com/embed/dFNP9Y470QY"></iframe>
+        </li>
+    </ol>
+    <br>
+    <br>
+    <!--Pustanje video snimka u fullScreen-->
+    <section id="player">
+        <video id="media" width="720" height="400" loop autoplay>
+            <source src="mov_bbb.mp4">
+        </video>
+    </section>
+    <br>
+    <!--Kontrole za video-->
+    <button id="playPause" onclick="pustiPauziraj()">Пусти</button>
+    <br>
+    <button id="uspori" onclick="usporiUbrzaj(this)">Успори</button>
+    <button id="ubrzaj" onclick="usporiUbrzaj(this)">Убрзај</button>
+    <br>
+    <button id="reset" onclick="reset()">Рестарт</button>
+    <br>
+    <button id="unazad" onclick="premotaj(this)">Унапред</button>
+    <button id="unapred" onclick="premotaj(this)">Уназад</button>
+    <br>
+    <br>
+    <a href="index.html">
+        <img src="home.png"
+        alt="Pocetna stranica"
+        style="width:42px;height:42px;">
+    </a>
+    <script>
+        /*Podesavanje funkcija za prikaz videa u fullScreenu*/
+        var video, player;
+        function initiate(){
+            video = document.getElementById('media');
+            player = document.getElementById('player');
+            player.addEventListener('click', gofullscreen);
+        }
+        function gofullscreen(){
+            if(!document.mozFullScreenElement){
+                player.mozRequestFullScreen();
+                video.play();
+            }
+            else{
+                document.mozExitFullScreen();
+                video.pause();
+            }
+        }
+        addEventListener('load', initiate);
+        /*Funkcija koja u promenljivu video stavlja id videao odmah pri ucitavanju stranice*/
+        function ucitajVideo(){
+            video=document.getElementById("media");
+        }
+        /*Pustanje i pauziranje video snimka*/
+        function pustiPauziraj(){
+            if(video.paused==true){
+                video.play();
+                document.getElementById("playPause").innerHTML='Pauziraj'
+            }
+            else{
+                video.pause();
+                document.getElementById("playPause").innerHTML='Pusti'
+            }
+
+        }
+        /*Uspori ili ubrzaj video*/
+        function usporiUbrzaj(dugme){
+            if(dugme.id=='uspori'){
+                video.playbackRate=video.playbackRate-0.2
+            }
+            else if(dugme.id=='ubrzaj'){
+                video.playbackRate=video.playbackRate+0.2
+            }
+        }
+        /*Funkcija za resetovanje videa*/
+        function reset(){
+            video.load()
+            document.getElementById("playPause").innerHTML='Pusti'
+        }
+        /*Funkcija za premotavanje videa unapred i unazad*/
+        function premotaj(dugme){
+            if(dugme.id=='unapred'){
+                video.currentTime+=3
+            }
+            else if(dugme.id=='unazad'){
+                video.currentTime-=3
+            }
+        }
+        /*Tacno vreme*/
+        var myVar = setInterval(function(){
+            myTimer()
+        },1000);
+        function myTimer(){
+            var d = new Date();
+            document.getElementById("tacnoVreme").innerHTML=d.toLocaleTimeString();
+        }
+    </script>
+</body>
+</html>

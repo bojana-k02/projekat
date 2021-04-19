@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПОЧЕТНА</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        header{
+            background-color: rgb(0, 162, 255);
+        }
+        #reklama{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: justify;
+        }
+        #meni{
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        }
+        a{
+        float: none;
+        width: 6em;
+        text-decoration: none;
+        color: white;
+        background-color: rgb(0, 128, 38);
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 0.2em 0.6em;
+        }
+        a:hover{
+        background-color: rgb(0, 17, 255);
+        }
+        #umotvorina{
+            text-align: center;
+            font-size: 30px;
+        }
+        #opcija1{ 
+            display: inline;
+        }
+        #opcija2{
+            display: inline;
+        }
+        #opcija3{
+            display: inline;
+        }
+        footer{
+            position: relative;
+            margin-top: 100px;
+            text-align: center;
+            padding: 3px;
+            background-color: DarkSalmon;
+            color: white;
+        }
+    </style>
+    <script>
+            i=1;
+        setInterval(function(){
+            var umotvorine=["Ако слепац слепца води, обадва ће у јаму упасти.",
+        "Видела жаба да се коњ поткива, па и она дигла ногу.",
+        "Гвожђе се кује док је вруће.",
+        "Лако је с пуним трбухом пост хвалити.",
+        "Лако је плитку бару замутити и будалу налјутити."];
+        document.getElementById("umotvorina").innerHTML=umotvorine[i % 5];
+        i++;
+        }, 10000);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="https://biometrija.rs">Biometrija - Kontrola pristupa</a>
+        </h1>
+        <p id="reklama">
+            <img src="reklama2.jpg" alt="Biometrija" style="width: 200px; height: 150px;">
+            <img src="reklama9.jpg" alt="Alarm" style="width: 200px; height: 150px;">
+            <img src="reklama5.png" alt="Video nadzor" style="width: 200px; height: 150px;">
+            <img src="reklama7.jpg" alt="Evidencija radnog vremena" style="width: 200px; height: 150px;">
+            <img src="reklama8.jpg" alt="Procena rizika" style="width: 200px; height: 150px;">
+            <img src="reklama3.jpg" alt="Evidencija radnog vremena" style="width: 200px; height: 150px;">
+        </p>
+    </header>
+    <h2><ul id="meni">
+        <li id="opcija1">
+            <a href="galerija.html">Галерија</a>
+        </li>
+        <li id="opcija2">
+            <a href="matematika.html">Математика</a>
+        </li>
+        <li id="opcija3">
+            <a href="muzika.html">Музика</a>
+        </li>
+        </ul>
+    </h2>
+    <address>
+        Написала: Бојана Косовац<br>
+        Школа: Седма београдска гимназија<br>
+        Одељење: IV-3<br>
+        Србија, Београд
+    </address>
+    <p>Списак задатака</p>
+        <ul>
+            <li>Линк ка галерији</li>
+            <li>Линк ка страници омиљени предмет</li>
+            <li>Линк ка страници Музика са линковима ка јутјуб-у</li>
+        </ul>
+    <p>Народне умотворине:</p>
+    <p id="umotvorina">Ако слепац слепца води, обадва ће у јаму упасти.</p>
+    <footer>
+        <p>&copy; 2021 Bojana Kosovac &reg; TM. All Rights Reserved.
+            Design & Developing by Web Factory<br></p>
+    <p><a href="mailto:kosovacb2002@gmail.com">Bojana Kosovac - Posta</a></p>
+</footer>
+</body>
+</html>
